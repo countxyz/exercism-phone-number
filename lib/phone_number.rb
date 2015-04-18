@@ -5,8 +5,8 @@ class PhoneNumber
   end
 
   def verify_phone_number
-    if @phone_number.size > 9
-     good_number
+    if @phone_number.size.between?(10, 11)
+      good_number
     else
       bad_number_message
     end

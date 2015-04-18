@@ -8,6 +8,12 @@ RSpec.describe PhoneNumber do
       response     = '123456789 is a bad phone number'
       expect(phone_number.verify_phone_number).to eq response
     end
+
+    it 'will not accept phone numbers longer than 11 digits' do
+      phone_number = PhoneNumber.new 123456789012
+      response     = '123456789012 is a bad phone number'
+      expect(phone_number.verify_phone_number).to eq response
+    end
   end
 
   describe 'Acceptable Numbers' do
