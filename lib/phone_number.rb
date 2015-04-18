@@ -5,11 +5,11 @@ class PhoneNumber
   end
 
   def verify_phone_number
-    if @phone_number =~ /\d{10}/
-      good_number_message
-    else
-      bad_number_message
-    end
+    @phone_number.to_s =~ /\d{10}/ ? good_number_message : bad_number_message
+  end
+
+  def good_number_message
+    'Good Number'
   end
 
   def bad_number_message
